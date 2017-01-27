@@ -1,15 +1,17 @@
 require_relative 'tile'
+require 'byebug'
 
 class Board
 
-  def initialize
-    @grid = Array.new(9) { Array.new(9) }
+  def initialize(size = 9)
+    @size = size
+    @grid = Array.new(@size) { Array.new(@size) }
     populate
   end
 
   def populate
-    @grid.each do |row|
-      row.each do |col|
+    (0...@size).each do |row|
+      (0...@size).each do |col|
         @grid[row, col] = Tile.new
       end
     end
@@ -21,7 +23,8 @@ class Board
   end
 
   def []=(pos, val)
-    self[pos] = val
+    row, col = pos
+    @grid[row][col] = val
   end
 
 end
