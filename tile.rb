@@ -1,6 +1,6 @@
 class Tile
 
-  def initialize(bombed)
+  def initialize(bombed = false)
     @revealed = false
     @flagged = false
     @bombed = bombed
