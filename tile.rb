@@ -5,4 +5,5 @@ class Tile
     @flagged = false
     @bombed = bombed
   end
+
 end
