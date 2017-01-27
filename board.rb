@@ -2,6 +2,7 @@ class Board
 
   def initialize
     @grid = Array.new(9) { Array.new(9) }
+    populate
   end
 
   def populate
@@ -10,6 +11,15 @@ class Board
         @grid[row, col] = Tile.new
       end
     end
+  end
+
+  def [](pos)
+    row, col = pos
+    @grid[row][col]
+  end
+
+  def []=(pos, val)
+    self[pos] = val
   end
 
 end
