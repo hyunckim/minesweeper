@@ -17,6 +17,14 @@ class Board
     end
   end
 
+  def place_bombs
+    @size.times do
+
+
+      
+    end
+  end
+
   def [](pos)
     row, col = pos
     @grid[row][col]
@@ -25,6 +33,10 @@ class Board
   def []=(pos, val)
     row, col = pos
     @grid[row][col] = val
+  end
+
+  def reveal(pos)
+
   end
 
 end
